@@ -1,0 +1,169 @@
+<html>
+<head>
+
+</head>
+<title>File Uploader</title>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.bdy{
+background-image:url('Static/img/upload1.img');
+background-color:red;
+radius-border:20px;
+}
+#hdr{
+color:pink;
+background: linear-gradient(to top right, darkmagenta 0%, hotpink 100%);
+width:400px;
+margin-left:350px;
+}
+#bdyclr{
+height:673px;
+}
+form{
+color:red;
+}
+body{
+color:blue;
+}
+#cont{
+margin-top:15%;
+color:green;
+background-color:black;
+}
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: linear-gradient(to top right, darkmagenta 0%, hotpink 100%);
+	color: #333;
+	font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	height: 260px;
+	border-radius: 3px;
+	box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+
+.title {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #999;
+	text-align: center;
+}
+
+h1 {
+	font-size: 16px;
+	font-weight: 300;
+	color: #666;
+}
+
+.dropzone {
+	width: 100px;
+	height: 80px;
+	border: 1px dashed #999;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.upload-icon {
+	margin: 25px 2px 2px 2px;
+}
+
+.upload-input {
+	position: relative;
+	top: -62px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.btn {
+	display: block;
+	width: 140px;
+	height: 40px;
+	background: darkmagenta;
+	color: #fff;
+	border-radius: 3px;
+	border: 0;
+	box-shadow: 0 3px 0 0 hotpink;
+	transition: all 0.3s ease-in-out;
+	font-size: 14px;
+}
+
+.btn:hover {
+	background: rebeccapurple;
+	box-shadow: 0 3px 0 0 deeppink;
+}
+
+</style>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+<section class="pt-6 pb-6 bg-dark inner-header" id="bdyclr">
+<div class="container">
+	<section class="pt-12 pb-12 bg-black inner-header" id="hdr">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1 class="mt-0 mb-3 text-black">File Uploader</h1>
+		</div>
+	</div>
+	</section>
+</div>
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category,message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+  {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="/uploader" method="post" enctype="multipart/form-data">
+
+<div class="frame">
+	<div class="center">
+		<div class="title">
+			<h4>Drop file to upload</h4>
+		</div>
+
+		<div class="dropzone">
+			<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+			<input type="file" name="file11" class="upload-input" />
+		</div>
+
+		<button type="Submit" class="btn" name="uploadbutton11">Upload file</button>
+
+	</div>
+</div>
+</form>
+</section>
+</body>
+</html>
+<!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
+
+<!-- NO JS ADDED YET -->

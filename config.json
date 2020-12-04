@@ -1,0 +1,9 @@
+{
+  "params": {
+    "local_uri": "mysql://CYnUtj4Vyv:@remotemysql.com/CYnUtj4Vyv",
+    "prod_uri": "mysql://CYnUtj4Vyv:@remotemysql.com/CYnUtj4Vyv",
+
+    "upload_location":"C:\\Users\\Asus DM226T\\PycharmProjects\\FileUploader"
+  }
+}
+
